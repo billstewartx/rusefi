@@ -22,7 +22,7 @@ fi
 
 # 3. Clean and Build unit tests with coverage enabled
 echo "Building unit tests with coverage..."
-make clean
+# make clean
 make -j$(nproc) COVERAGE=yes
 
 # 4. Run unit tests
