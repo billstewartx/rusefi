@@ -34,11 +34,13 @@ echo "Running unit tests..."
 echo "Generating coverage reports..."
 mkdir -p coverage_reports
 
+source ./coverage_common.sh
+
 # HTML report
-./venv/bin/gcovr -r ../ --html-details -o coverage_reports/coverage.html -e ".*googletest.*" -e ".*unit_tests.*"
+./venv/bin/gcovr -r ../ --html-details -o coverage_reports/coverage.html $GCOVR_EXCLUDES
 
 # JSON report
-./venv/bin/gcovr -r ../ --json -o coverage_reports/coverage.json -e ".*googletest.*" -e ".*unit_tests.*"
+./venv/bin/gcovr -r ../ --json -o coverage_reports/coverage.json $GCOVR_EXCLUDES
 
 echo "Coverage reports generated in unit_tests/coverage_reports/"
 echo "HTML: unit_tests/coverage_reports/coverage.html"
