@@ -21,9 +21,10 @@ if [ ! -f "venv/bin/gcovr" ]; then
 fi
 
 # 3. Clean and Build unit tests with coverage enabled
-echo "Building unit tests with coverage..."
+JOBS=$(nproc)
+echo "Building unit tests with coverage using $JOBS cores..."
 # make clean
-make -j$(nproc) COVERAGE=yes
+make -j$JOBS COVERAGE=yes
 
 # 4. Run unit tests
 echo "Running unit tests..."
