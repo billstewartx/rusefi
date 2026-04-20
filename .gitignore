@@ -47,3 +47,7 @@ artifacts
 
 .cache/
 *.idx
+
+
+# gcov local
+venv/
