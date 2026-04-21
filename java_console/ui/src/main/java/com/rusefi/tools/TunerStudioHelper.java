@@ -13,7 +13,10 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class TunerStudioHelper {
+/**
+ * see TsHelper
+ */
+public class TsHelper {
     private static final String FIND_TS_PROCESS = "Get-Process | Where-Object {$_.MainWindowTitle -like \\\"*TunerStudio*\\\"}";
 
     public static NamedThreadFactory factory = new NamedThreadFactory("TSScanner");
